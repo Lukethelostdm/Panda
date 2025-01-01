@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ping-panda",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
