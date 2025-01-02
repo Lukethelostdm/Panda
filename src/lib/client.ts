@@ -5,7 +5,6 @@ import { StatusCode } from "hono/utils/http-status"
 import superjson from "superjson"
 
 const getBaseUrl = () => {
-  // browser should use relative path
   if (typeof window !== "undefined") {
     return ""
   }
@@ -19,8 +18,7 @@ const getBaseUrl = () => {
     return `https://${process.env.VERCEL_URL}`
   }
 
-  // assume deployment to cloudflare workers otherwise, you'll get this URL after running
-  // `npm run deploy`, which deploys your server to cloudflare
+
   return "https://<YOUR_DEPLOYED_WORKER_URL>/"
 }
 
@@ -76,10 +74,7 @@ function serializeWithSuperJSON(data: any): any {
   )
 }
 
-/**
- * This is an optional convenience proxy to pass data directly to your API
- * instead of using nested objects as hono does by default
- */
+
 function createProxy(target: any, path: string[] = []): any {
   return new Proxy(target, {
     get(target, prop, receiver) {
