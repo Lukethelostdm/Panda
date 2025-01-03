@@ -19,7 +19,9 @@ export const NavBar = async () => {
                         {user ? (
                             <>
                                 <SignOutButton>
-                                    <Button className="sm" variant="ghost">Sign Out</Button>
+                                    <Button size="sm" variant="ghost">
+                                        Sign out
+                                    </Button>
                                 </SignOutButton>
 
                                 <Link
@@ -35,7 +37,7 @@ export const NavBar = async () => {
                         ) : (
                             <>
                                 <Link
-                                    href="/dashboard"
+                                    href="/pricing"
                                     className={buttonVariants({
                                         size: "sm",
                                         variant: "ghost",
@@ -50,17 +52,19 @@ export const NavBar = async () => {
                                         variant: "ghost",
                                     })}
                                 >
-                                    Sign In
+                                    Sign in
                                 </Link>
+
                                 <div className="h-8 w-px bg-gray-200" />
+
                                 <Link
                                     href="/sign-up"
                                     className={buttonVariants({
                                         size: "sm",
-                                        className: "flex items-center gap-1.5"
+                                        className: "flex items-center gap-1.5",
                                     })}
                                 >
-                                    Sign Up <ArrowRight className="size-4" />
+                                    Sign up <ArrowRight className="size-4" />
                                 </Link>
                             </>
                         )}
